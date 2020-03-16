@@ -37,7 +37,6 @@ public class VerActividades extends HttpServlet {
 		request.setAttribute("actividades", actividades);
 		
 		request.getRequestDispatcher("verActividades.jsp").forward(request, response);}
-
 	
 	
 	

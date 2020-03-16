@@ -24,13 +24,19 @@
   <body>
     <h1>Actividades</h1>
     
+    
+    
    <table class="table">
   <thead>
     <tr>
-      <th scope="col">Nombre_apellido</th>
-      <th scope="col">Dni</th>
-      <th scope="col">Codigo</th>
-      <th scope="col">ID</th>
+      <th scope="col">Fecha Inico</th>
+      <th scope="col">Dias</th>
+      <th scope="col">Horas</th>
+      <th scope="col">Max Participantes</th>
+      <th scope="col">Precio</th>
+      <th>
+      <a scope="col" class="btn btn-success" href="CrearActividad?">Crear</a></th>
+      
     </tr>
   </thead>
   <tbody>
@@ -42,11 +48,18 @@
 	  %>
   
     <tr>
-      <th><% %></th>
-      <td><% %></td>
-      <td><% %></td>
-      <td><% %></td>
+      <th><%=actividad.getFecha_inicio() %></th>
+      <td><%=actividad.getDias() %></td>
+      <td><%=actividad.getHoras() %></td>
+      <td><%=actividad.getMaxParticipantes() %></td>
+      <td><%=actividad.getPrecio() %></td>
+      <td>
+      <a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">Ver</a>
+	  <a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">Eliminar</a>
+	   
+      </td>
     </tr>
+    
     
     <%} %>
   </tbody>
