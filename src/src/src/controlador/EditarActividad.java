@@ -11,16 +11,16 @@ import modelo.bean.Actividad;
 import modelo.dao.ModeloActividad;
 
 /**
- * Servlet implementation class eliminarActividad
+ * Servlet implementation class EditarActividad
  */
-@WebServlet("/eliminarActividad")
-public class eliminarActividad extends HttpServlet {
+@WebServlet("/EditarActividad")
+public class EditarActividad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public eliminarActividad() {
+    public EditarActividad() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,20 +29,15 @@ public class eliminarActividad extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		int idActividad = Integer.parseInt(request.getParameter("actividades"));		
+		// TODO Auto-generated method stub
+		int idActividad = Integer.parseInt(request.getParameter("id"));
 		
-		ModeloActividad ma = new ModeloActividad();
+		ModeloActividad mActividad = new ModeloActividad();
+		Actividad actividad = mActividad.get(idActividad);
 		
-	
-		ma.delete(idActividad);
-		
-		
-		
-		request.getRequestDispatcher("verActividades.jsp").forward(request, response);
-		
+		request.setAttribute("actividad", actividad);
+		request.getRequestDispatcher("editarActividad.jsp").forward(request, response);
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
