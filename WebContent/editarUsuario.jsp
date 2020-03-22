@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="modelo.bean.Actividad"%>
+<%@ page import="modelo.bean.Usuario"%>
 <%
-	Actividad actividad = (Actividad) request.getAttribute("actividad");
+	Usuario usuario = (Usuario) request.getAttribute("usuario");
 %>
 
 
@@ -25,44 +25,31 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<h1>Formulario para editar actividad</h1>
+		<h1>Formulario para editar usuario</h1>
 
 		<form action="ModificarActividad" method="POST">
 			<div class="form-group">
-				<label for="nombre">Nombre actividad</label> <input type="text"
-					class="form-control" id="nombre" name="nombre"
-					value="<%=actividad.getNombre()%>">
+				<label for="nombre">Nombre_apellido usuario</label> <input type="text"
+					class="form-control" id="nombre_apellido" name="nombre_apellido"
+					value="<%=usuario.getNombreApellido()%>">
 			</div>
 
 			<div class="form-group">
-				<label for="fecha_inicio">Fecha inicio</label> <input type="text"
-					class="form-control" id="fecha_inicio" name="fecha_inicio"
-					placeholder="yyyy-MM-dd" value="<%=actividad.getFecha_inicio()%>">
+				<label for="fecha_inicio">Dni</label> <input type="text"
+					class="form-control" id="dni" name="dni"
+					placeholder="yyyy-MM-dd" value="<%=usuario.getDni()%>">
 			</div>
 
 			<div class="form-group">
-				<label for="dias_semana">Dias semana</label> <input type="text"
-					class="form-control" id="dias_semanabre" name="dias_semana"
-					value="<%=actividad.getDias()%>">
+				<label for="dias_semana">Codigo</label> <input type="text"
+					class="form-control" id="codigo" name="codigo"
+					value="<%=usuario.getCodigo()%>">
 			</div>
 
 			<div class="form-group">
-				<label for="horas">Duracion (horas)</label> <input type="text"
-					class="form-control" id="horas" name="horas"
-					value="<%=actividad.getHoras()%>">
-			</div>
-
-			<div class="form-group">
-				<label for="max_participantes">Máximo numero de
-					participantes</label> <input type="text" class="form-control"
-					id="max_participantes" name="max_participantes"
-					value="<%=actividad.getMaxParticipantes()%>">
-			</div>
-
-			<div class="form-group">
-				<label for="precio">Precio</label> <input type="text"
-					class="form-control" id="precio" name="precio"
-					value="<%=actividad.getPrecio()%>">
+				<label for="horas">Id</label> <input type="text"
+					class="form-control" id="id" name="id"
+					value="<%=usuario.getId()%>">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Submit</button>
@@ -72,7 +59,7 @@
 
 	<div class="row mt-3">
 		<div class="col">
-			<a href="VerActividades">Ver actividades</a>
+			<a href="VerUsuarios">Ver usuarios</a>
 		</div>
 
 	</div>

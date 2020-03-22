@@ -5,7 +5,7 @@
     <%@page import= "modelo.bean.Usuario" %>	
 	
 	<%
-    ArrayList<Usuario> usuarios = (ArrayList)request.getAttribute("usuarios");
+	Usuario usuario = (Usuario)request.getAttribute("usuario");
     %>
 	
 <!doctype html>
@@ -59,8 +59,19 @@
 		<br>
 		<br>
 		<div class="row">
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-primary">Editar</button></div>
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-danger">Borrar</button></div>
+			<div class="col text-center font-weight-bold">
+				<a class="btn btn-secondary" href="EditarUsuario?id=<%=usuario.getId()%>">Editar</a>
+			</div>
+			<div class="col text-center font-weight-bold">
+				<a class="btn btn-danger" href="ElimnarActividad?id=<%=usuario.getId()%>">Eliminar</a>
+			</div>
+			
+		</div>
+		<div class="row mt-3">
+			<div class="col">
+				<a href="VerUsuarios">Ver usuarios</a>
+			</div>
+			
 		</div>
 		<br>
 	</div>
