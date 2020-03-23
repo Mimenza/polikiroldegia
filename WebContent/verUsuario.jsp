@@ -33,37 +33,26 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col text-center font-weight-bold"> </div>
-			<div class="col text-center font-weight-bold"> </div>
+			<div class="col text-center font-weight-bold">Dni </div>
+			<div class="col text-center font-weight-bold">${usuario.getDni()} </div>
 		</div>
 		<br>
 		<div class="row">
-			<div class="col text-center font-weight-bold"> </div>
-			<div class="col text-center font-weight-bold"> </div>
+			<div class="col text-center font-weight-bold">Codigo</div>
+			<div class="col text-center font-weight-bold">${usuario.getCodigo()}</div>
 		</div>
 		<br>
 		<div class="row">
-			<div class="col text-center font-weight-bold"> </div>
-			<div class="col text-center font-weight-bold"> </div>
+			<div class="col text-center font-weight-bold">Id </div>
+			<div class="col text-center font-weight-bold">${usuario.getId()} </div>
 		</div>
-		<br>
-		<div class="row">
-			<div class="col text-center font-weight-bold"></div>
-			<div class="col text-center font-weight-bold"></div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col text-center font-weight-bold"></div>
-			<div class="col text-center font-weight-bold"></div>
-		</div>
-		<br>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">
-				<a class="btn btn-secondary" href="EditarUsuario?id=<%=usuario.getId()%>">Editar</a>
+				<a class="btn btn-secondary" href="EditarUsuario?id=${usuario.getId()}">Editar</a>
 			</div>
 			<div class="col text-center font-weight-bold">
-				<a class="btn btn-danger" href="ElimnarActividad?id=<%=usuario.getId()%>">Eliminar</a>
+				<a class="btn btn-danger" href="ElimnarActividad?id=${usuario.getId()}">Eliminar</a>
 			</div>
 			
 		</div>

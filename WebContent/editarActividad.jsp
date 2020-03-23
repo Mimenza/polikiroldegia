@@ -31,41 +31,41 @@
 			<div class="form-group">
 				<label for="nombre">Nombre actividad</label> <input type="text"
 					class="form-control" id="nombre" name="nombre"
-					value="<%=actividad.getNombre()%>">
+					value="${actividad.getNombre()}">
 			</div>
 
 			<div class="form-group">
 				<label for="fecha_inicio">Fecha inicio</label> <input type="text"
 					class="form-control" id="fecha_inicio" name="fecha_inicio"
-					placeholder="yyyy-MM-dd" value="<%=actividad.getFecha_inicio()%>">
+					placeholder="yyyy-MM-dd" value="${actividad.getFecha_inicio()}">
 			</div>
 
 			<div class="form-group">
 				<label for="dias_semana">Dias semana</label> <input type="text"
 					class="form-control" id="dias_semanabre" name="dias_semana"
-					value="<%=actividad.getDias()%>">
+					value="${actividad.getDias()}">
 			</div>
 
 			<div class="form-group">
 				<label for="horas">Duracion (horas)</label> <input type="text"
 					class="form-control" id="horas" name="horas"
-					value="<%=actividad.getHoras()%>">
+					value="${actividad.getHoras()}">
 			</div>
 
 			<div class="form-group">
 				<label for="max_participantes">Máximo numero de
 					participantes</label> <input type="text" class="form-control"
 					id="max_participantes" name="max_participantes"
-					value="<%=actividad.getMaxParticipantes()%>">
+					value="${actividad.getMaxParticipantes()}">
 			</div>
 
 			<div class="form-group">
 				<label for="precio">Precio</label> <input type="text"
 					class="form-control" id="precio" name="precio"
-					value="<%=actividad.getPrecio()%>">
+					value="${actividad.getPrecio()}">
 			</div>
 
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" >Submit</button>
 		</form>
 
 	</div>

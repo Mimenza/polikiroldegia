@@ -49,17 +49,17 @@
 	  %>
   
     <tr>
-      <th><%=actividad.getFecha_inicio() %></th>
-      <td><%=actividad.getDias() %></td>
-      <td><%=actividad.getHoras() %></td>
-      <td><%=actividad.getMaxParticipantes() %></td>
-      <td><%=actividad.getPrecio() %></td>
+      <th>${actividad.getFecha_inicio()}</th>
+      <td>${actividad.getDias()}</td>
+      <td>${actividad.getHoras()}</td>
+      <td>${actividad.getMaxParticipantes()}</td>
+      <td>${actividad.getPrecio()}</td>
       <td>
-      <a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">Ver</a>
+      <a class="btn btn-primary" href="VerActividad?id=${activida.getId()}">Ver</a>
       
-      <a class="btn btn-success" href="EditarActividad?id=<%=actividad.getId()%>">Editar</a>
+      <a class="btn btn-success" href="EditarActividad?id=${activida.getId()}">Editar</a>
       
-	  <a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">Eliminar</a>
+	  <a class="btn btn-danger" href="EliminarActividad?id=${activida.getId()}">Eliminar</a>
 	   
       </td>
     </tr>

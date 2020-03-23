@@ -50,16 +50,16 @@
 	  %>
   
     <tr>
-      <th><%=usuario.getNombreApellido() %></th>
-      <td><%=usuario.getDni() %></td>
-      <td><%=usuario.getCodigo() %></td>
-      <td><%=usuario.getId() %></td>
+      <th>${usuario.getNombreApellido()}</th>
+      <td>${usuario.getDni()}</td>
+      <td>${usuario.getCodigo()}</td>
+      <td>${usuario.getId()}</td>
       <td>
-      <a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">Ver</a>
+      <a class="btn btn-primary" href="VerUsuario?id=${usuario.getId()}">Ver</a>
       
-      <a class="btn btn-success" href="EditarUsuario?id=<%=usuario.getId()%>">Editar</a>
+      <a class="btn btn-success" href="EditarUsuario?id=${usuario.getId()}">Editar</a>
       
-	  <a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">Eliminar</a>
+	  <a class="btn btn-danger" href="EliminarUsuario?id=${usuario.getId()}">Eliminar</a>
 	   
       </td>
     </tr>

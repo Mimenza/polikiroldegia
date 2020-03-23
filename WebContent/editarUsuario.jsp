@@ -31,25 +31,25 @@
 			<div class="form-group">
 				<label for="nombre">Nombre_apellido usuario</label> <input type="text"
 					class="form-control" id="nombre_apellido" name="nombre_apellido"
-					value="<%=usuario.getNombreApellido()%>">
+					value="${usuario.getNombreApellido()}">
 			</div>
 
 			<div class="form-group">
 				<label for="fecha_inicio">Dni</label> <input type="text"
 					class="form-control" id="dni" name="dni"
-					placeholder="yyyy-MM-dd" value="<%=usuario.getDni()%>">
+					placeholder="yyyy-MM-dd" value="${usuario.getDni()}">
 			</div>
 
 			<div class="form-group">
 				<label for="dias_semana">Codigo</label> <input type="text"
 					class="form-control" id="codigo" name="codigo"
-					value="<%=usuario.getCodigo()%>">
+					value="${usuario.getCodigo()}">
 			</div>
 
 			<div class="form-group">
 				<label for="horas">Id</label> <input type="text"
 					class="form-control" id="id" name="id"
-					value="<%=usuario.getId()%>">
+					value="${usuario.getId()}">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Submit</button>
