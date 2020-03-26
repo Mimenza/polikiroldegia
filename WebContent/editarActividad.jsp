@@ -66,16 +66,13 @@
 			</div>
 
 			<button type="submit" class="btn btn-primary" >Submit</button>
+			
+			<a class="btn btn-warning  text-center" href="VerActividades" role="button">Volver</a>
 		</form>
 
 	</div>
 
-	<div class="row mt-3">
-		<div class="col">
-			<a href="VerActividades">Ver actividades</a>
-		</div>
-
-	</div>
+	
 
 
 	<!-- Optional JavaScript -->

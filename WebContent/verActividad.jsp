@@ -56,7 +56,7 @@
 		<br>
 		<br>
 		<div class="row">
-			<div class="col text-center"><a href="ActualizarActividad?id=${actividad.getId()}" type="button" class="btn btn-primary btn-lg text-white">Editar</a></div>
+			<div class="col text-center"><a href="EditarActividad?id=${actividad.getId()}" type="button" class="btn btn-primary btn-lg text-white">Editar</a></div>
 			<div class="col text-center"><a href="EliminarActividad?id=${actividad.getId()}" type="button" class="btn btn-danger btn-lg">Borrar</a></div>
 		</div>
 		<br>
