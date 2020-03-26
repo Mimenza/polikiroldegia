@@ -1,14 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import= "java.util.ArrayList" %>
-    <%@page import= "modelo.bean.Actividad" %>
     
     
-    <!--pasar de objeto a arrayList-->
+  
     
-    <%
-    ArrayList<Actividad> actividades = (ArrayList)request.getAttribute("actividades");
-    %>
     
 <!doctype html>
 <html lang="en">
@@ -20,14 +15,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Ver Actividades!</title>
+    <title>Actividades</title>
   </head>
   <body>
-    <h1>Actividades</h1>
-    
-    
-    
-   <table class="table">
+  <div class="container">
+  
+  <h1 class="text-center">Actividades</h1>
+  
+  <div class="row justify-content-center mt-2 text-center">
+  <div class="col">
+  
+ <table class="table table-striped table-dark table-bordered" >
   <thead>
     <tr>
       <th scope="col">Fecha Inico</th>
@@ -35,42 +33,45 @@
       <th scope="col">Horas</th>
       <th scope="col">Max Participantes</th>
       <th scope="col">Precio</th>
-      <th>
-      <a scope="col" class="btn btn-success" href="CrearActividad?">Crear</a></th>
-      
+      <th scope="col" >
+      <a class="btn btn-warning btn-md text-white" href="Menu">Volver</a>
+  <a class="btn btn-success btn-md text-white" href="CrearActividad">Crear</a>
+      </th>
     </tr>
   </thead>
   <tbody>
   
-  <%for(int i = 0;i<actividades.size();i++){
-	  
-	  Actividad actividad = actividades.get(i);  
-	  
-	  %>
+  <c:forEach items="${actividades}" var="actividad">
   
-    <tr>
+   <tr>
       <th>${actividad.getFecha_inicio()}</th>
       <td>${actividad.getDias()}</td>
       <td>${actividad.getHoras()}</td>
       <td>${actividad.getMaxParticipantes()}</td>
       <td>${actividad.getPrecio()}</td>
       <td>
-      <a class="btn btn-primary" href="VerActividad?id=${activida.getId()}">Ver</a>
+      <a class="btn btn-primary" href="VerActividad?id=${actividad.getId()}">Ver</a>
       
-      <a class="btn btn-success" href="EditarActividad?id=${activida.getId()}">Editar</a>
+      <a class="btn btn-success" href="EditarActividad?id=${actividad.getId()}">Editar</a>
       
-	  <a class="btn btn-danger" href="EliminarActividad?id=${activida.getId()}">Eliminar</a>
+	  <a class="btn btn-danger" href="EliminarActividad?id=${actividad.getId()}">Eliminar</a>
 	   
       </td>
     </tr>
-    
-    
-    <%} %>
+  
+  </c:forEach>
+		    
+  		
   </tbody>
 </table>
-    
-    
-    
+  
+  </div>
+  </div>
+  
+  
+  
+  </div>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,32 +1,25 @@
 package src.src.controlador;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import modelo.bean.Usuario;
-
-import modelo.dao.ModeloUsuario;
+import modelo.dao.ModeloInscripcion;
 
 /**
- * Servlet implementation class InsertarUsuario
+ * Servlet implementation class InscribirUsuario
  */
-@WebServlet("/InsertarUsuario")
-public class InsertarUsuario extends HttpServlet {
+@WebServlet("/InscribirUsuario")
+public class InscribirUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertarUsuario() {
+    public InscribirUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,34 +36,15 @@ public class InsertarUsuario extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String nombreApellido=request.getParameter("nombreApellido");
+		int idUsuario=Integer.parseInt(request.getParameter("idusuarios"));
+		int idActividad=Integer.parseInt(request.getParameter("idactividad"));
 		
-		String dni=request.getParameter("dni");
+		ModeloInscripcion modeloInscripcion=new ModeloInscripcion();
 		
-		String codigo=request.getParameter("codigo");
-		
-		//sortu usuario objetu bat
-		
-		Usuario usuario=new Usuario();
-		
-		//jasotako datuekin setak egin
-		
-		usuario.setNombreApellido(nombreApellido);
-		
-		usuario.setDni(dni);
-		
-		usuario.setCodigo(codigo);
-		
-		//modeloa sortu
-		
-		ModeloUsuario modeloUsuario=new ModeloUsuario();
-		
-		//inserta egin
-		
-		modeloUsuario.insert(usuario);
-		
-		//VerActividades kontrolatzailerai deitu
-		response.sendRedirect("verUsuarios");
+		if(!modeloInscripcion.estaInscrito(idUsuario, idActividad)) {
+			modeloInscripcion.inscribir(idUsuario, idActividad);
+		}
+		response.sendRedirect("verActividad?id=" + idActividad);
 	}
 
 }
