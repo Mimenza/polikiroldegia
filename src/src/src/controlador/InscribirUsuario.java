@@ -44,7 +44,7 @@ public class InscribirUsuario extends HttpServlet {
 		if(!modeloInscripcion.estaInscrito(idUsuario, idActividad)) {
 			modeloInscripcion.inscribir(idUsuario, idActividad);
 		}
-		response.sendRedirect("verActividad?id=" + idActividad);
+		response.sendRedirect("VerActividad?id=" + idActividad);
 	}
 
 }

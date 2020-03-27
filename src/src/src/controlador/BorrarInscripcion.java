@@ -34,7 +34,7 @@ public class BorrarInscripcion extends HttpServlet {
 		ModeloInscripcion modeloInscripcion=new ModeloInscripcion();
 		modeloInscripcion.delete(idActividad, idUsuario);
 		
-		response.sendRedirect("verActividad?id=" + idActividad);
+		response.sendRedirect("VerActividad?id=" + idActividad);
 	}
 
 	/**
