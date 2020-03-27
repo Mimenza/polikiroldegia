@@ -23,12 +23,26 @@
   
   <h1 class="text-center">Actividades</h1>
   
+  <div class="col-4 offset-8">
+  <form action="BuscarActividad" method="POST" class="form-inline">
+  
+  <input type="text"  name="query" class="fomr.control" placeholder="buscar actividades" >
+  <button type="submit" class="btn btn-primary mx-2">Buscar</button>
+  <a class="btn btn-secondary" href="VerActividades?">Todas</a>
+  
+  </form>
+  </div>
+  
+  
+  
+  
   <div class="row justify-content-center mt-2 text-center">
   <div class="col">
   
  <table class="table table-striped table-dark table-bordered" >
   <thead>
     <tr>
+      <th scope="col">Nombre</th>
       <th scope="col">Fecha Inico</th>
       <th scope="col">Dias</th>
       <th scope="col">Horas</th>
@@ -45,6 +59,7 @@
   <c:forEach items="${actividades}" var="actividad">
   
    <tr>
+      <th>${actividad.getNombre()}</th>
       <th>${actividad.getFecha_inicio()}</th>
       <td>${actividad.getDias()}</td>
       <td>${actividad.getHoras()}</td>

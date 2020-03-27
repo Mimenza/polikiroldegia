@@ -22,6 +22,20 @@
   
   <h1 class="text-center">Usuarios</h1>
   
+  <div class="col-4 offset-8">
+  <form action="BuscarUsuario" method="POST" class="form-inline">
+  
+  <input type="text"  name="query" class="fomr.control" placeholder="buscar usuarios" >
+  <button type="submit" class="btn btn-primary mx-2">Buscar</button>
+  <a class="btn btn-secondary" href="VerUsuarios?">Todas</a>
+  
+  </form>
+  </div>
+  
+  
+  
+  
+  
   <div class="row justify-content-center text-center mt-2">
   
   <div class="col">
