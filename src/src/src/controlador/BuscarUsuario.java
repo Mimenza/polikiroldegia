@@ -48,7 +48,6 @@ public class BuscarUsuario extends HttpServlet {
 		
 		
 		
-		
 		request.getRequestDispatcher("verActividades.jsp").forward(request, response);
 	}
 
