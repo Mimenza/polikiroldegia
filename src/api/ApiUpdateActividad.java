@@ -15,55 +15,50 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import modelo.bean.Actividad;
-import modelo.bean.Usuario;
 import modelo.dao.ModeloActividad;
-import modelo.dao.ModeloUsuario;
 
 /**
- * Servlet implementation class ApiCreateActividad
+ * Servlet implementation class ApiUpdateActividad
  */
-@WebServlet("/ApiCreateActividad")
-public class ApiCreateActividad extends HttpServlet {
+@WebServlet("/ApiUpdateActividad")
+public class ApiUpdateActividad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ApiUpdateActividad() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public ApiCreateActividad() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// datuak jaso
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
-		String jsonActividad = request.getParameter("actividad");
-
-		JSONObject jsonObject = new JSONObject(jsonActividad);
-
-		Actividad actividad = new Actividad();
+		String jsonActividad=request.getParameter("actividad");
+		
+		JSONObject jsonObject=new JSONObject(jsonActividad);
+		
+		Actividad actividad=new Actividad();
+		actividad.setId(jsonObject.getInt("id"));
 		actividad.setNombre(jsonObject.getString("nombre"));
-
-		Date fecha = null;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+		
+		Date fecha=null;
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		
 		try {
-			fecha = sdf.parse(jsonObject.getString("fecha_inicio"));
+			fecha=sdf.parse(jsonObject.getString("fecha_inicio"));
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -73,19 +68,20 @@ public class ApiCreateActividad extends HttpServlet {
 		actividad.setHoras(jsonObject.getInt("horas"));
 		actividad.setMaxParticipantes(jsonObject.getInt("maxParticipantes"));
 		actividad.setPrecio(jsonObject.getDouble("precio"));
-
-		ModeloActividad modeloActividad = new ModeloActividad();
-		modeloActividad.insert(actividad);
-
+		
+		ModeloActividad modeloActividad=new ModeloActividad();
+		modeloActividad.update(actividad);
+		
 		try {
 			modeloActividad.getConexion().close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		response.setHeader("Access-Control-Allow-Origin", "*");
+		
+		response.setHeader("Access-Control-Allow-Origin","*"); 
 		response.setCharacterEncoding("UTF-8");
+		
 	}
 
 }
